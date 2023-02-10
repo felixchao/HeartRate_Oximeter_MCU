@@ -150,7 +150,6 @@ void TC4_TimerExpired(TC_TIMER_STATUS status, uintptr_t context)
     }
 }
 
-// TODO 12.02
 void I2C3_TransferCallback(uintptr_t contextHandle)
 {
     if (KXTJ3_ReadData[0] & (1 << 4))
@@ -221,7 +220,8 @@ int main(void)
     sprintf((char *) USARTRTxBuffer, "Received Data :");
     LCM_DrawString(0, 7, (char *) USARTRTxBuffer);
 
-    // TODO 12.03
+
+    
     KXTJ3_WriteData[0] = 0x1D;
     KXTJ3_WriteData[1] = 0x80;
     SERCOM3_I2C_Write(KXTJ3_ADDRESS, KXTJ3_WriteData, 2);
@@ -255,7 +255,6 @@ int main(void)
 
             ADC_ConversionStart();
 
-            // TODO 12.04
             KXTJ3_WriteData[0] = 0x16;
             SERCOM3_I2C_WriteRead(KXTJ3_ADDRESS, KXTJ3_WriteData, 1, KXTJ3_ReadData, 1);
         }
@@ -309,7 +308,6 @@ int main(void)
             myprintf("\033[3;1HTemperature Value : %4d", ADC_Result[1]);
         }
 
-        // TODO 12.05
         if (I2C3_IsDataReady)
         {
             for (i = 0; i < 6; i++)
