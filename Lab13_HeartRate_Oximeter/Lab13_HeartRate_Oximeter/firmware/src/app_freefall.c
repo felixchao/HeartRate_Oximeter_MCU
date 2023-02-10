@@ -31,6 +31,7 @@
 #include "main.h"
 #include "app_freefall.h"
 #include "app_oled.h"
+#include <math.h>
 
 // *****************************************************************************
 // *****************************************************************************
@@ -197,9 +198,14 @@ void APP_FREEFALL_Tasks ( void )
             // Please complete the Freefall algorithm in below state.
             // The Freefall Gravity Threshold could use the define FREEFALL_GRAVITY_THRESHOLD
             bool FreeFall_Detected = false;
-
+            short int x = (AxisOutByte[1] << 8 | AxisOutByte[0]);
+            short int y = (AxisOutByte[3] << 8 | AxisOutByte[2]);
+            short int z = (AxisOutByte[5] << 8 | AxisOutByte[4]);
+            
             // Implement Freefall detect algorithm between this ---------------v
-
+            if(abs(x) <= 1000 && abs(y) <= 1000 && abs(z) <= 1000){
+                FreeFall_Detected = true;
+            }
             // ----------------------------------------------------------------^
 
             if ( FreeFall_Detected )
@@ -226,7 +232,14 @@ void APP_FREEFALL_Tasks ( void )
             // Challenge 2
             // Try add a Buzzer Alarm while Freefall event detected
             // Implement Buzzer Alarm between this ----------------------------v
-
+            short int x = (AxisOutByte[1] << 8 | AxisOutByte[0]);
+            short int y = (AxisOutByte[3] << 8 | AxisOutByte[2]);
+            short int z = (AxisOutByte[5] << 8 | AxisOutByte[4]);
+            
+            // Implement Freefall detect algorithm between this ---------------v
+            if(abs(x) <= 1000 && abs(y) <= 1000 && abs(z) <= 1000){
+                APP_OLED_FreeFall_Alert(true);
+            }
             // ----------------------------------------------------------------^
 
             if (TC4_DelayIsComplete(DELAY_TIMER_FREEFALL_LED))
