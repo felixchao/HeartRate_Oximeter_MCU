@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production/Lab12_SERCOM_I2C_Access_G-Sensor.X.production.elf">
+    <memory name="program">
+      <units>bytes</units>
+      <length>262144</length>
+      <used>15751</used>
+      <free>246393</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>32768</length>
+      <used>1702</used>
+      <free>31066</free>
+    </memory>
+  </executable>
+</project>

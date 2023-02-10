@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: default
+folderName: Lab0_First_Project
+frameworkPath: C:\Users\A62407\MCC Harmony
+processor: ATSAMD21G18A
+projectName: Lab0_First_Project
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\SAMD21_DFP\3.6.144\samd21a\atdf\ATSAMD21G18A.atdf
